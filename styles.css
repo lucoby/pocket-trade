@@ -1,0 +1,15 @@
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    list-style-type: none;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  
+  .grid-list li {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
