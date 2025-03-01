@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark">
     <head>
         <title>Tradelist for Pocket TCG</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="script.js"></script>
         <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
     <body>
-        <div id="controlsContainer"></div>
-        <ul id="cardsContainer" class="grid-list"></ul>
+        <div class="container">
+            <div id="setFilters" class="row pb-2">
+                <button id="filterA1" class="btn btn-primary col-2 me-2 filter-button" data-filter="A1">Genetic Apex</button>
+                <button id="filterA1a" class="btn btn-success col-2 me-2 filter-button" data-filter="A1a">Mystic Island</button>
+                <button id="filterA2" class="btn btn-secondary col-2 me-2 filter-button" data-filter="A2">Space-Time Smackdown</button>
+                <button id="filterA2a" class="btn btn-warning col-2 me-2 filter-button" data-filter="A2a">Triumphant Light</button>
+            </div>
+            <div id="rarityFilters" class="row pb-2">
+                <button id="filter◊" class="btn btn-secondary col-1 me-2 filter-button" data-filter="◊">◊</button>
+                <button id="filter◊◊" class="btn btn-secondary col-1 me-2 filter-button" data-filter="◊◊">◊◊</button>
+                <button id="filter◊◊◊" class="btn btn-secondary col-1 me-2 filter-button" data-filter="◊◊◊">◊◊◊</button>
+                <button id="filter◊◊◊◊" class="btn btn-secondary col-1 me-2 filter-button" data-filter="◊◊◊◊">◊◊◊◊</button>
+                <button id="filter☆" class="btn btn-warning col-1 me-2 filter-button" data-filter="☆">☆</button>
+                <button id="filter☆☆" class="btn btn-warning col-1 me-2 filter-button" data-filter="☆☆">☆☆</button>
+                <button id="filter☆☆☆" class="btn btn-warning col-1 me-2 filter-button" data-filter="☆☆☆">☆☆☆</button>
+                <button id="filterCrown" class="btn btn-warning col-1 me-2 filter-button" data-filter="Crown">Crown Rare</button>
+            </div>
+            <div id="A1" class="A1">
+                <div id="headerA1" class="row pb2"><h2 class="text-center">Genetic Apex (A1)</h2></div>
+                <div id="cardsContainerA1" class="row"></div>
+            </div>
+            <div id="A1a" class="A1a">
+                <div id="headerA1a" class="row pb-2"><h2 class="text-center">Mystic Island (A1a)</h2></div>
+                <div id="cardsContainerA1a" class="row"></div>
+            </div>
+            <div id="A2" class="A2">
+                <div id="headerA2" class="row pb2"><h2 class="text-center">Space-Time Smackdown (A2)</h2></div>
+                <div id="cardsContainerA2" class="row"></div>
+            </div>
+            <div id="A2a" class="A2a">
+                <div id="headerA1" class="row pb2"><h2 class="text-center">Triumphant Light (A2a)</h2></div>
+                <div id="cardsContainerA2a" class="row"></div>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
     </body>
 </html>
