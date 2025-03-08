@@ -10,7 +10,9 @@ $(document).ready(function () {
     let cards = '';
     $.getJSON(file, data => {
         $.each(data, (index, item) => {
-          cards += `<div class="col-2 border-0 card selectable unselected ${item.rarity}"><img src="${item.image}" class="mx-auto d-block" alt="${item.name}" width="170"></div>`;
+          cards += `<div class="col-2 border-0 card selectable unselected ${item.rarity}" data-set="${key}" data-rarity="${item.rarity}" data-name="${item.name}">
+          <img src="${item.image}" class="mx-auto d-block" alt="${item.name}" width="170">
+          </div>`;
         });
         $('#cardsContainer' + key).html(cards);
     }).fail(function () {
@@ -27,5 +29,17 @@ $(document).ready(function () {
   $('body').on('click', '.selectable', function() {
     $(this).toggleClass('unselected');
     $(this).toggleClass('text-bg-secondary');
+  });
+
+  $('.copy-button').click(function() {
+    let cardList = '';
+    $('.selectable:not(.unselected)').each(function() {
+      cardList += $(this).data('set') + ' ' + $(this).data('rarity') + ' ' + $(this).data('name') + '\n';
+    })
+    navigator.clipboard.writeText(cardList).then(() => {
+    }).catch(err => {
+        console.error("Failed to copy:", err);
+    });
+
   });
 });

@@ -4,7 +4,7 @@
 
 * ~~Highlight selected~~
 * ~~Refactor filter selected~~
-* Export card names
+* ~~Export card names~~
 * Export/inport encoded string
 * Toggle off all rarity filters
 * Search
