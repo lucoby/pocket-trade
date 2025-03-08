@@ -2,8 +2,8 @@
 
 ## TODO
 
-* Highlight selected
-* Refactor filter selected
+* Highlight selected~
+* ~~Refactor filter selected~~
 * Export card names
 * Export/inport encoded string
 * Toggle off all rarity filters

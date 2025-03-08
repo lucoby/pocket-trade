@@ -10,7 +10,7 @@ $(document).ready(function () {
     let cards = '';
     $.getJSON(file, data => {
         $.each(data, (index, item) => {
-          cards += `<div class="col-2 border-0 card selectable ${item.rarity}"><img src="${item.image}" class="mx-auto d-block" alt="${item.name}" width="170"></div>`;
+          cards += `<div class="col-2 border-0 card selectable unselected ${item.rarity}"><img src="${item.image}" class="mx-auto d-block" alt="${item.name}" width="170"></div>`;
         });
         $('#cardsContainer' + key).html(cards);
     }).fail(function () {
@@ -25,24 +25,6 @@ $(document).ready(function () {
   });
 
   $('body').on('click', '.selectable', function() {
-    $(this).toggleClass('selected');
-  });
-
-  $('.select-button').click(function() {
-    var filterValue = $(this).data('filter');
-    $(this).toggleClass('active');
-    if ($(this).hasClass('active')) {
-      $('.card').each(function() {
-        if (!$(this).hasClass('selected')) {
-          $(this).addClass('d-none')
-        }
-      });
-    } else {
-      $('.card').each(function()  {
-        if ($(this).hasClass('d-none')) {
-          $(this).removeClass('d-none')
-        }
-      });
-    }
+    $(this).toggleClass('unselected');
   });
 });
