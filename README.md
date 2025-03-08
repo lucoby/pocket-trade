@@ -2,7 +2,7 @@
 
 ## TODO
 
-* Highlight selected~
+* ~~Highlight selected~~
 * ~~Refactor filter selected~~
 * Export card names
 * Export/inport encoded string

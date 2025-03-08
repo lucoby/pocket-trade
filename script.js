@@ -26,5 +26,6 @@ $(document).ready(function () {
 
   $('body').on('click', '.selectable', function() {
     $(this).toggleClass('unselected');
+    $(this).toggleClass('text-bg-secondary');
   });
 });
