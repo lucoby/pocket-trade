@@ -32,6 +32,25 @@
             <div id="selectedFilters" class="row pb-2">
                 <button id="filterSelected" class="btn btn-secondary col-1 me-2 filter-button" data-filter="unselected">Selected</button>
                 <button id="copy" class="btn btn-secondary col-1 me-2 copy-button"><i class="fas fa-clipboard"></i></button>
+                <button id="export" class="btn btn-secondary col-1 me-2 export-button"><i class="fas fa-download"></i></button>
+                <button id="import" class="btn btn-secondary col-1 me-2" data-bs-toggle="modal" data-bs-target="#importModal"><i class="fas fa-file-import"></i></button>
+            </div>
+            <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="import" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">Import</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input id="importField" type="text" placeholder="Export string">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary import-button" data-bs-dismiss="modal">Import</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="A1" class="A1">
                 <div id="headerA1" class="row pb2"><h2 class="text-center">Genetic Apex (A1)</h2></div>

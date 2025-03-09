@@ -10,7 +10,7 @@ $(document).ready(function () {
     let cards = '';
     $.getJSON(file, data => {
         $.each(data, (index, item) => {
-          cards += `<div class="col-2 border-0 card selectable unselected ${item.rarity}" data-set="${key}" data-rarity="${item.rarity}" data-name="${item.name}">
+          cards += `<div class="col-2 border-0 card selectable unselected ${item.rarity}" data-set="${key}" data-rarity="${item.rarity}" data-name="${item.name}" data-id="${item.id}">
           <img src="${item.image}" class="mx-auto d-block" alt="${item.name}" width="170">
           </div>`;
         });
@@ -40,6 +40,31 @@ $(document).ready(function () {
     }).catch(err => {
         console.error("Failed to copy:", err);
     });
+  });
 
+  $('.export-button').click(function() {
+    let cardList = '';
+    $('.selectable:not(.unselected)').each(function() {
+      cardList += $(this).data('set') + ':' + $(this).data('id') + ',';
+    })
+    navigator.clipboard.writeText(cardList.slice(0, -1)).then(() => {
+    }).catch(err => {
+        console.error("Failed to copy:", err);
+    });
+  });
+
+  $('.import-button').click(function() {
+    let inputText = $('#importField').val();
+    let cards = inputText.split(',').map(item => item.split(':'));
+    $('.selectable').each(function() {
+      let select = cards.some(item => item[0] == $(this).data('set') && item[1] == $(this).data('id'));
+      if (select && $(this).hasClass('unselected')) {
+        $(this).removeClass('unselected');
+        $(this).addClass('text-bg-secondary');
+      } else if (!select && !$(this).hasClass('unselected')) {
+        $(this).addClass('unselected');
+        $(this).removeClass('text-bg-secondary');
+      }
+    })
   });
 });
