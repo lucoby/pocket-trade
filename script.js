@@ -10,8 +10,8 @@ $(document).ready(function () {
     let cards = '';
     $.getJSON(file, data => {
         $.each(data, (index, item) => {
-          cards += `<div class="col-2 border-0 card selectable unselected ${item.rarity}" data-set="${key}" data-rarity="${item.rarity}" data-name="${item.name}" data-id="${item.id}">
-          <img src="${item.image}" class="mx-auto d-block" alt="${item.name}" width="170">
+          cards += `<div class="col-3 col-lg-2 border-0 card selectable unselected ${item.rarity}" data-set="${key}" data-rarity="${item.rarity}" data-name="${item.name}" data-id="${item.id}">
+          <img src="${item.image}" class="mx-auto w-100 d-block" alt="${item.name} img-fluid">
           </div>`;
         });
         $('#cardsContainer' + key).html(cards);

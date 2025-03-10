@@ -7,6 +7,6 @@
 * ~~Export card names~~
 * ~~Export/inport encoded string~~
 * ~~Toggle off all rarity filters~~
-* Responsive
+* ~~Responsive UI~~
 * Save to cookie
 * Search
