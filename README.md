@@ -6,5 +6,7 @@
 * ~~Refactor filter selected~~
 * ~~Export card names~~
 * ~~Export/inport encoded string~~
-* Toggle off all rarity filters
+* ~~Toggle off all rarity filters~~
+* Responsive
+* Save to cookie
 * Search
